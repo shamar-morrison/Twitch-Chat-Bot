@@ -62,21 +62,21 @@ export class TwitchChatBot {
     }
 
     refreshTokenIfNeeded() {
-        //TODO if needed - twitch apparently only requires the token on login so it is good enough for now to just get a token on start-up.
+
     }
 
     private setupBotBehavior() {
         this.twitchClient.on('message', (channel: any, tags: any, message: any, self: any) => {
-            let helloCommand = "!hello"
+            let helloCommand = ['hey', 'hi', 'hello', 'sup', 'yo', 'howdy', 'greetings', 'hola', 'bonjour', 'hallo', 'ciao', 'namaste', 'salaam', 'konnichiwa', 'ni hao', 'shalom', 'jambo', 'merhaba', 'xin chao', 'sawubona', 'privet', 'kamusta', 'sveiki', 'ahoj', 'hujambo', 'kumusta', 'salut', 'kia ora', 'konnichi wa', 'konnichiha'];
 
-            //! means a command is coming by, and we check if it matches the command we currently support
-            if (message.startsWith('!') && message === helloCommand)
-                this.sayHelloToUser(channel,tags);
+            if (helloCommand.includes(message.toLowerCase())) {
+                this.sayHelloToUser(channel, tags);
+            }
         });
     }
 
     private sayHelloToUser(channel: any, tags: any) {
-            this.twitchClient.say(channel, `Hello, ${ tags.username }! Welcome to the channel.`);
+            this.twitchClient.say(channel, `Hello, ${ tags.username }!`);
     }
 
     private buildConnectionConfig(channel: string, username: string, accessToken: string) {

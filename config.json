@@ -1,10 +1,9 @@
 {
     "twitch": {
         "token_endpoint": "https://id.twitch.tv/oauth2/token",
-        "username": "<chatBotUsername>",
-        "client_id":"<clientID>",
-        "client_secret":"<clientSecret>",
-        "authorization_code":"<AuthCode>",
-        "channel": "<channel_to_connect_to>"
+        "username": "HorizonBot",
+        "client_id":"ou93rb1z4ultcgff7ruk3dytkqtl2x",
+        "client_secret":"5ic1134ch02txs4tzd141fwnkwf8b6",
+        "authorization_code":"q0cmcvh4hm59apss5qhr7g4f5z3mcv", "channel": "xxhorizonhunt3r"
     }
 }
